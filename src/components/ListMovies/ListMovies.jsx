@@ -16,7 +16,7 @@ export const ListMovies = ({ data }) => {
                                     : 'https://astatic.ccmbg.com/ccmcms_linternaute/dist/public/public-assets/img/default/cine-defaut-1.jpg'
                             }
                             alt=""
-                            width={160}
+                            width={250}
                         />
                         <Title>{title}</Title>
                     </StyledLink>

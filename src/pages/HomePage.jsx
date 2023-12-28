@@ -33,7 +33,7 @@ export default function HomePage() {
         <Loader />
       ) : (
         <div>
-          <h1>Trending Today</h1>
+          <h1 style={{ marginLeft: 60 }}>Trending Today</h1>
           {movies.length > 0 && !isError && <ListMovies data={movies} />}
         </div>
       )}

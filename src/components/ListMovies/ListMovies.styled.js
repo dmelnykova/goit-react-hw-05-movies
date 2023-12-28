@@ -2,15 +2,17 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const List = styled.ul`
-  margin-left: 50px;
-  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 30px;
 `;
 
 export const Item = styled.li`
-  max-width: 160px;
+  max-width: 250px;
+  margin-bottom: 18px;
 `;
 
 export const Title = styled.p`
@@ -23,9 +25,10 @@ export const Title = styled.p`
 `;
 
 export const Img = styled.img`
-  height: 240px;
+  max-width: 100%;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  max-width: 250px;
 `;
