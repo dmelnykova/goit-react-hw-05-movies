@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/797.36d30357.chunk.js","mappings":"gMAAe,SAASA,IACpB,OAAOC,EAAAA,EAAAA,KAAA,OAAAC,SAAK,aAChB,C","sources":["pages/MoviesPage.jsx"],"sourcesContent":["export default function MoviePage() {\n    return <div>MoviePage</div>\n}"],"names":["MoviePage","_jsx","children"],"sourceRoot":""}
