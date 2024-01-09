@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { getTrendMovies } from "../api"; 
 import { ListMovies } from 'components/ListMovies/ListMovies';
 import { Loader } from "components/Loader/Loader";

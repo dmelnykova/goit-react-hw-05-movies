@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, NavLink } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { getMoviesDetails } from "../api"; 
 import {
     Button,
@@ -53,12 +53,12 @@ export default function MovieDetailsPage() {
                 <ul>
                     <li>
                         <StyledLink to={`${goBackLink}/cast`}>
-                            <NavLink>Cast</NavLink>
+                            Cast
                         </StyledLink>
                     </li>
                     <li>
                         <StyledLink to={`${goBackLink}/reviews`}>
-                            <NavLink>Reviews</NavLink>
+                            Reviews
                         </StyledLink>
                     </li>
                 </ul>
