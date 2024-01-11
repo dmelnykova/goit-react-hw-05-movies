@@ -42,7 +42,7 @@ export const SubWrapper = styled.div`
   border-bottom: 1px solid gray;
 `;
 
-export const MovieInfo = styled.p`
+export const Information = styled.p`
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;

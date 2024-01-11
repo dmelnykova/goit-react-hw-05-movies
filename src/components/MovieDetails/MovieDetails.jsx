@@ -1,4 +1,4 @@
-import { getMoviesDetails } from 'api';
+import { fetchGetMovieDetailsById } from 'api';
 import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -13,7 +13,7 @@ export const MovieDetails = ({ setIsMovie }) => {
     const fetchMovie = async () => {
       try {
         setIsLoading(true);
-        const response = await getMoviesDetails(params.movieId);
+        const response = await fetchGetMovieDetailsById(params.movieId);
         setIsMovie(true);
         setMovie(response);
       } catch (error) {

@@ -1,9 +1,10 @@
-import { getMovieAbout } from 'api';
+import { fetchGetMovieReviewsById } from 'api';
+import { Errors } from 'components/Errors/Errors';
 import { Loader } from 'components/Loader/Loader';
 import { ReviewsCard } from 'components/ReviewsCard/ReviewsCard';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Item, List, Error} from './Reviews.styled';
+import { Item, List } from './Reviews.styled';
 
 export default function MovieReviews() {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +15,7 @@ export default function MovieReviews() {
     const fetchMovie = async () => {
       try {
         setIsLoading(true);
-        const response = await getMovieAbout(params.movieId);
+        const response = await fetchGetMovieReviewsById(params.movieId);
         setReviews(response.results);
       } catch (error) {
       } finally {
@@ -35,7 +36,7 @@ export default function MovieReviews() {
           ))}
         </List>
       ) : (
-        !isLoading && <Error> There are no reviews </Error>
+        !isLoading && <Errors>We don`t have any reviews for this movie.</Errors>
       )}
       {isLoading && <Loader />}
     </>

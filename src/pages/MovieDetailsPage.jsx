@@ -1,69 +1,37 @@
-import React, { useRef, useState, useEffect } from "react";
-import { getMoviesDetails } from "../api"; 
+import { Errors } from 'components/Errors/Errors';
+import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import {
-    Button,
-    MovieInfo,
-    StyledLink,
-    // SubWrapper,
+  Button,
+  Information,
+  StyledLink,
+  SubWrapper,
 } from 'components/MovieDetails/MovieDetails.styled';
-import { Loader } from "components/Loader/Loader";
-import { toast } from "react-hot-toast";
-import { Outlet, useParams, useLocation } from 'react-router-dom';
-
+import { useRef, useState } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function MovieDetailsPage() {
-    const [details, setDetails] = useState(null);
-    const [error, setError] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
+  const [isMovie, setIsMovie] = useState(false);
+  const location = useLocation();
+  const backLocation = useRef(location);
+  return (
+    <div>
+      <Link to={backLocation.current.state?.from ?? '/'}>
+        <Button>⇐ Go back</Button>
+      </Link>
 
-    const { movieId } = useParams();
+      <MovieDetails setIsMovie={setIsMovie} />
+      {isMovie ? (
+        <SubWrapper>
+          <Information>Additional information</Information>
+          <StyledLink to={'cast'}>Cast </StyledLink>
+          <StyledLink to={'reviews'}>Reviews</StyledLink>
+        </SubWrapper>
+      ) : (
+        <Errors>Errors! Please try again!</Errors>
+      )}
 
-    const location = useLocation();
-    const backLinkRef = useRef(location);
-
-    useEffect(() => {
-        const searchDetails = async id => {
-            try {
-                setIsLoading(true);
-                setError(false);
-                const data = await getMoviesDetails(id);
-                setDetails(data);
-            } catch (error) {
-                setError(true);
-                toast.error('Please, try to reload this page');
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        searchDetails(movieId);
-    }, [movieId]);
-
-    const goBackLink = backLinkRef.current.state?.from ?? '/';
-
-    return (
-        <>
-            {isLoading && <Loader />}
-            {details && (
-                <div>
-                    <Button to={goBackLink}>Go back</Button>
-                    <MovieInfo data={details} />
-                </div>
-            )}
-            {!isLoading && !error && (
-                <ul>
-                    <li>
-                        <StyledLink to={`${goBackLink}/cast`}>
-                            Cast
-                        </StyledLink>
-                    </li>
-                    <li>
-                        <StyledLink to={`${goBackLink}/reviews`}>
-                            Reviews
-                        </StyledLink>
-                    </li>
-                </ul>
-            )}
-            <Outlet />
-        </>
-    );
+      <Outlet />
+    </div>
+  );
 }

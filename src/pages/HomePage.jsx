@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTrendMovies } from "../api"; 
+import { fetchTrendMovies } from "../api"; 
 import { ListMovies } from 'components/ListMovies/ListMovies';
 import { Loader } from "components/Loader/Loader";
 import { toast } from "react-hot-toast";
@@ -14,7 +14,7 @@ export default function HomePage() {
       try {
         setIsLoading(true);
         setIsError(false);
-        const data = await getTrendMovies(); 
+        const data = await fetchTrendMovies(); 
         setMovies(data.results);
       } catch (error) {
         setIsError(true);
