@@ -34,7 +34,7 @@ export default function HomePage() {
       ) : (
         <div>
           <h1 style={{ marginLeft: 60 }}>Trending Today</h1>
-          {movies.length > 0 && !isError && <ListMovies data={movies} />}
+          {movies.length > 0 && !isError && <ListMovies movies={movies} />}
         </div>
       )}
     </>

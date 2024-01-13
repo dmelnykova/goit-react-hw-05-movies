@@ -1,4 +1,4 @@
-import { Img, Name } from './CastItem.styled';
+import { Img, Name, NameActor } from './CastItem.styled';
 
 export const ActorCard = ({ actor }) => {
   return (
@@ -12,8 +12,8 @@ export const ActorCard = ({ actor }) => {
         alt=""
         width={120}
       />
-      <Name>{actor.name}</Name>
-      <Name>Character: {actor.character}</Name>
+      <NameActor>{actor.name}</NameActor>
+      <Name>{actor.character}</Name>
     </>
   );
 };

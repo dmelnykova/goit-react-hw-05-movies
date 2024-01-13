@@ -9,7 +9,7 @@ export const SearchMovie = ({ query }) => {
     evt.preventDefault();
     const value = evt.target.elements.query.value.trim();
     if (!value) {
-      return toast.error('Can not be empty');
+      return toast.error('Please enter a keyword');
     }
     params.set('query', value);
     setParams(params);

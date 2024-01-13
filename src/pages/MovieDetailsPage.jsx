@@ -2,7 +2,6 @@ import { Errors } from 'components/Errors/Errors';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import {
   Button,
-  Information,
   StyledLink,
   SubWrapper,
 } from 'components/MovieDetails/MovieDetails.styled';
@@ -17,14 +16,13 @@ export default function MovieDetailsPage() {
   return (
     <div>
       <Link to={backLocation.current.state?.from ?? '/'}>
-        <Button>⇐ Go back</Button>
+        <Button>Go back</Button>
       </Link>
 
       <MovieDetails setIsMovie={setIsMovie} />
       {isMovie ? (
         <SubWrapper>
-          <Information>Additional information</Information>
-          <StyledLink to={'cast'}>Cast </StyledLink>
+          <StyledLink to={'cast'}>Cast</StyledLink>
           <StyledLink to={'reviews'}>Reviews</StyledLink>
         </SubWrapper>
       ) : (

@@ -39,7 +39,7 @@ export const MovieDetails = ({ setIsMovie }) => {
           />
           <div>
             <Title>
-              {movie.original_title} {movie.release_date.split('-')[0]}
+              {movie.original_title} ({movie.release_date.split('-')[0]})
             </Title>
             <Text>
               User score: {Math.round(Number(movie.vote_average) * 10)}%
@@ -47,7 +47,7 @@ export const MovieDetails = ({ setIsMovie }) => {
             <SubTitle>Overview</SubTitle>
             <Text>{movie.overview}</Text>
             <SubTitle>Genres</SubTitle>
-            <Text>{movie.genres.map(genre => genre.name).join(', ')}</Text>
+            <Text>{movie.genres.map(genre => genre.name).join(' ')}</Text>
           </div>
         </Layout>
       )}

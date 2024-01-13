@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Erors = styled.b`
-  margin-left: 64px;
-  font-size: 24px;
-  color: red;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  color: #737373;
+  margin-top: 56px;
+  margin-bottom: 56px;
 `;

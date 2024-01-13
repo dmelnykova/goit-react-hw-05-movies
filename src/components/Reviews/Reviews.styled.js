@@ -1,21 +1,13 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  margin-left: 60px;
+  margin-left: 150px;
   margin-top: 16px;
 `;
 
 export const Item = styled.li`
-  width: 800px;
+  width: 1000px;
   margin-bottom: 16px;
-  border: 1px solid gray;
-  border-radius: 4px;
+  margin-top: 16px;
   padding: 12px;
-  background-color: #fff;
-`;
-
-export const Error = styled.p `
-  margin-left: 64px;
-  font-size: 24px;
-  color: red;
 `;
