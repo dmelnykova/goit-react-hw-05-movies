@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Author = styled.b`
-  font-size: 24px;
+  font-size: 22px;
 `;
 
 export const Text = styled.p`

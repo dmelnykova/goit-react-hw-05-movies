@@ -36,7 +36,7 @@ export default function MovieCast() {
           ))}
         </List>
       ) : (
-        !isLoading && <Errors>We don`t have any casts for this movie.</Errors>
+        !isLoading && <Errors>No information about the actors</Errors>
       )}
       {isLoading && <Loader />}
     </>

@@ -3,7 +3,7 @@ import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import {
   Button,
   StyledLink,
-  SubWrapper,
+  SubWrapper
 } from 'components/MovieDetails/MovieDetails.styled';
 import { useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';

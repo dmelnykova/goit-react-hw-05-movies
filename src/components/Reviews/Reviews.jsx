@@ -36,7 +36,7 @@ export default function MovieReviews() {
           ))}
         </List>
       ) : (
-        !isLoading && <Errors>We don`t have any reviews for this movie.</Errors>
+        !isLoading && <Errors>No reviews for this movie</Errors>
       )}
       {isLoading && <Loader />}
     </>
